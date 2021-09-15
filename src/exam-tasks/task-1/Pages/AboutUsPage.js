@@ -1,22 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const AboutUsPage = () => {
-  const goBack = () => {
-    window.history.go(-1);
-    return false;
-  };
+  let history = useHistory();
 
   return (
     <div>
       <h1>About us</h1>
-      <button
-        action="action"
-        onClick={() => goBack()}
-        type="submit"
-        value="Cancel"
-      >
-        Go back
-      </button>
+      <button onClick={() => history.goBack()}>Go back</button>
     </div>
   );
 };
